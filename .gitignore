@@ -73,3 +73,41 @@ local.properties
 
 # Kiro IDE files
 .kiro/
+
+# JaCoCo coverage reports
+*.exec
+/build/reports/jacoco/
+
+# Detekt reports
+/build/reports/detekt/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+
+# Database files
+*.db
+*.sqlite
+
+# Backup files
+*.bak
+*.backup
+
+# IDE specific files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# OS generated files
+.DS_Store?
+ehthumbs_vista.db
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*

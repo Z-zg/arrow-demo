@@ -1,7 +1,9 @@
 plugins {
     kotlin("jvm") version "2.0.21"
     id("maven-publish")
+    id("signing")
     id("jacoco")
+    id("org.jetbrains.dokka") version "1.9.10"
     id("io.gitlab.arturbosch.detekt") version "1.23.6"
 }
 
@@ -94,31 +96,16 @@ tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
     }
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from(components["java"])
-            
-            pom {
-                name.set("KtArrow Library")
-                description.set("Kotlin Arrow函数式编程库示例项目")
-                url.set("https://github.com/example/ktarrow-lib")
-                
-                licenses {
-                    license {
-                        name.set("Apache License 2.0")
-                        url.set("https://www.apache.org/licenses/LICENSE-2.0")
-                    }
-                }
-                
-                developers {
-                    developer {
-                        id.set("developer")
-                        name.set("Developer Name")
-                        email.set("developer@example.com")
-                    }
-                }
-            }
-        }
-    }
+// 创建源码JAR任务
+val sourcesJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("sources")
+    from(sourceSets.main.get().allSource)
 }
+
+// 创建Javadoc JAR任务
+val javadocJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("javadoc")
+    from(tasks.dokkaHtml.flatMap { it.outputDirectory })
+}
+
+
