@@ -162,7 +162,6 @@ src/
 
 ### Gradle 配置优化
 
-项目针对中国大陆网络环境进行了优化：
 
 1. **腾讯云镜像源** - `gradle-wrapper.properties` 使用腾讯云下载源
 2. **并行构建** - 启用 Gradle 并行构建和缓存
@@ -216,32 +215,6 @@ open build/reports/jacoco/test/html/index.html
 - [Kotlin 协程与 Arrow Fx](https://arrow-kt.io/docs/fx/coroutines/)
 - [光学系统详解](https://arrow-kt.io/docs/optics/lens/)
 
-## 🤝 贡献指南
-
-我们欢迎所有形式的贡献！
-
-### 如何贡献
-
-1. **Fork** 本仓库
-2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交你的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开一个 **Pull Request**
-
-### 代码规范
-
-- 遵循 [Kotlin 官方代码风格](https://kotlinlang.org/docs/coding-conventions.html)
-- 使用 Detekt 进行静态代码分析
-- 确保所有测试通过
-- 新功能需要包含相应的测试用例
-- 提交信息使用中文，格式清晰
-
-### 开发环境设置
-
-1. 安装 JDK 21
-2. 克隆仓库并导入到 IntelliJ IDEA
-3. 运行 `./gradlew build` 确保环境正常
-4. 运行 `./gradlew detekt` 检查代码质量
 
 ## 📄 许可证
 
