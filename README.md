@@ -31,11 +31,6 @@
 - JDK 21 或更高版本
 - Gradle 8.5 或更高版本
 
-### 克隆项目
-```bash
-git clone https://github.com/example/ktarrow-lib.git
-cd ktarrow-lib
-```
 
 ### 构建项目
 ```bash
